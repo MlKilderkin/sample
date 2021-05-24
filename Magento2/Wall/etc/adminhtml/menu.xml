@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mn_Wall::wall" title="Wall of Fame" module="Mn_Wall" sortOrder="51" resource="Mn_Wall::wall"/>
+        <add id="Mn_Wall::post" title="Wall Posts" module="Mn_Wall" sortOrder="10" action="mn_wall/post" resource="Mn_Wall::post" parent="Mn_Wall::wall"/>
+    </menu>
+</config>

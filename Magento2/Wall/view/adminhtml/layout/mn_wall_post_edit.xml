@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Mn\Wall\Block\Adminhtml\Post\Edit" name="mn_wall_post_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Mn\Wall\Block\Adminhtml\Post\Edit\Tabs" name="mn_wall_post_tabs">
+                <block class="Mn\Wall\Block\Adminhtml\Post\Edit\Tab\Post" name="mn_wall_post_edit_tab_post"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">post</argument>
+                    <argument name="block" xsi:type="string">mn_wall_post_edit_tab_post</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,43 @@
+<?php
+	$_wallsCollection = $block->getAllWalls();
+
+?>
+
+<?php if ($_wallsCollection->count()): ?>
+	<div class="wall-list-wrapper">
+		<?php $iterator = 1; ?>
+		<ol class="wall-list">
+			<?php foreach ($_wallsCollection as $_wall): ?>
+
+				<?php if ($featuredImage = $_wall->getFeaturedImage()) { ?>
+					<li id="<?php echo $_wall->getWallId();?>" class="wall-item">
+						<div class="wall-container">
+
+								<img src="<?php echo $block->getMediaUrl(); ?><?php echo $featuredImage ?>" alt="<?php echo $_wall->getName();?>" />
+								<div class="text"><?php echo $_wall->getName();?></div>
+								<div class="overlay"></div>
+
+							<div class="hidden hidden-content">
+								<?php echo $_wall->getWallContent(); ?>
+							</div>
+						</div>
+
+					</li>
+				<?php } ?>
+			<?php endforeach; ?>
+		</ol>
+		<div id="show-wall">
+			<a href="#" id="show-walls" class="">
+				<i class="fa fa-th" aria-hidden="true"></i>
+			</a>
+			<div class="show-wall ">
+				<div id="img-wr">
+
+				</div>
+				<div id="content-wr">
+
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
